@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab Members</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+
+  <div class="lab-header">
+    <h1>🎉 You found the world's cutest lab!</h1>
+    <p>Congratulations — you've discovered the cutest research group on the internet.<br>
+       Meet the full team. Peer review is conducted daily, usually at 3am.</p>
+  </div>
+
+  <div class="member-grid">
+
+    <div class="member">
+      <img src="assets/cat.jpg" alt="The lab cat" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22%3E%3Crect width=%22150%22 height=%22150%22 fill=%22%23e8f1ec%22/%3E%3Ctext x=%2275%22 y=%2290%22 font-size=%2260%22 text-anchor=%22middle%22%3E🐱%3C/text%3E%3C/svg%3E'">
+      <h3>IMZAA</h3>
+      <p class="role">Director of Keyboard Security</p>
+      <p class="desc">Reviews every manuscript by sitting on the keyboard. Current acceptance rate: 0%.</p>
+    </div>
+
+    <div class="member">
+      <img src="assets/cat2.jpg" alt="The lab's second cat" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22%3E%3Crect width=%22150%22 height=%22150%22 fill=%22%23e8f1ec%22/%3E%3Ctext x=%2275%22 y=%2290%22 font-size=%2260%22 text-anchor=%22middle%22%3E🐈%3C/text%3E%3C/svg%3E'">
+      <h3>SONG-EE</h3>
+      <p class="role">Distinguished Fellow of Butt-Pat Science</p>
+      <p class="desc">A devoted connoisseur of butt pats. Ongoing research finds that motivation scales linearly with pats per minute (n = 1, but the effect size is enormous).</p>
+    </div>
+
+    <div class="member">
+      <img src="assets/baby.jpg" alt="The lab's youngest member" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22%3E%3Crect width=%22150%22 height=%22150%22 fill=%22%23e8f1ec%22/%3E%3Ctext x=%2275%22 y=%2290%22 font-size=%2260%22 text-anchor=%22middle%22%3E👶%3C/text%3E%3C/svg%3E'">
+      <h3>CHAECHAE 🌼</h3>
+      <p class="role">Chief Nap Officer</p>
+      <p class="desc">Researching optimal sleep schedules. Preliminary finding: 4am is the best time to start the day.</p>
+    </div>
+
+    <div class="member">
+      <img src="assets/profile-lab.jpg" alt="Jihyun Yu" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22%3E%3Crect width=%22150%22 height=%22150%22 fill=%22%23e8f1ec%22/%3E%3Ctext x=%2275%22 y=%2290%22 font-size=%2260%22 text-anchor=%22middle%22%3E🧑‍🔬%3C/text%3E%3C/svg%3E'">
+      <h3>Jihyun Yu</h3>
+      <p class="role">Chief Can Opener (a.k.a. The Staff)</p>
+      <p class="desc">Hired by the cats for can-opening expertise; promoted to coffee procurement by the baby. Occasionally writes papers between shifts.</p>
+    </div>
+
+  </div>
+
+  <a class="back-home" href="index.html">← Back to the serious page</a>
+
+</main>
+
+<script>
+// 마우스를 따라다니는 이모지 트레일 🐈 🌼 ☕️ 🐈‍⬛ 👼
+(function () {
+  const EMOJIS = ["🐈", "🌼", "☕️", "🐈‍⬛", "👼"];
+  let last = 0;
+  function spawn(x, y) {
+    const now = Date.now();
+    if (now - last < 90) return; // 너무 촘촘하지 않게
+    last = now;
+    const el = document.createElement("span");
+    el.className = "emoji-trail";
+    el.textContent = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+    el.style.left = x + "px";
+    el.style.top = y + "px";
+    el.style.setProperty("--dx", (Math.random() * 40 - 20) + "px");
+    el.style.setProperty("--rot", (Math.random() * 60 - 30) + "deg");
+    document.body.appendChild(el);
+    el.addEventListener("animationend", () => el.remove());
+  }
+  document.addEventListener("mousemove", e => spawn(e.clientX, e.clientY));
+  document.addEventListener("touchmove", e => {
+    const t = e.touches[0];
+    if (t) spawn(t.clientX, t.clientY);
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
