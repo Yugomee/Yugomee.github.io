@@ -184,6 +184,16 @@ footer {
 .member h3 { margin: 0 0 2px; font-size: 1.1rem; }
 .member .role { color: var(--accent); font-size: 0.88rem; font-weight: 600; margin: 0 0 8px; }
 .member .desc { font-size: 0.88rem; color: var(--muted); margin: 0; }
+.member .desc + .desc { margin-top: 6px; }
+.governance {
+  margin: 44px auto 0;
+  max-width: 480px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
 .back-home { display: inline-block; margin-top: 36px; }
 
 /* 이모지 커서 트레일 (lab 페이지) */
