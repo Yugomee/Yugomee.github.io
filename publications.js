@@ -21,6 +21,7 @@ const PUBLICATIONS = [
     authors: "Jihyun Yu, Mingyeong Song*, Jae Yi Sung*, Soomin Kim, Wonho Bae, Mingyu Kim, Junhyug Noh",
     venue: "WACV 2027",
     year: 2027,
+    page: "https://yugomee.github.io/PolarityVQA/",
     // arXiv/GitHub 링크가 공개되면 여기에 추가:
     // arxiv: "https://arxiv.org/abs/...",
     // github: "https://github.com/...",
